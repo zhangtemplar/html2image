@@ -11,8 +11,10 @@ const height = 825;
 
 function createDriver() {
     const option = new Options();
+    option.addArguments("no-sandbox");
     option.addArguments("window-size=1200,825");
     option.addArguments("headless");
+    option.addArguments("disable-dev-shm-usage");
     return new webdriver.Builder().forBrowser('chrome').setChromeOptions(option).build();
 };
 
